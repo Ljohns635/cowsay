@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{ heading }}</h1>
+    <span><a href="/home">Home</a></span>
+    <span><a href="/history">History</a></span>
+
+    <h1>Welcome to Cow Talks</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" >
+    </form>
 </body>
 </html>
