@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponseRedirect, reverse
 from cow_app.models import CowText
 from cow_app.forms import CowTextForm
+import subprocess
 
 def index_view(request):
     context = {}
@@ -8,10 +9,11 @@ def index_view(request):
         form = CowTextForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
-            new_data = CowText.objects.create(
+            CowText.objects.create(
                 speak = data['speak']
             )
             return HttpResponseRedirect(request.path_info)
+           
     form = CowTextForm()
     context.update({'form': form})
     return render(request, 'index.html', context)
