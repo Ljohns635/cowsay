@@ -1,3 +1,4 @@
 from django.contrib import admin
+from cow_app.models import CowText
 
-# Register your models here.
+admin.site.register(CowText)

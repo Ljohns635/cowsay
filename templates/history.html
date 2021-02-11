@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <span><a href="/homepage">Home</a></span>
+    <span><a href="/history">History</a></span>
     <h1>{{ text }}</h1>
+
+    <ul>
+        {% for word in words%}
+        <li>{{word.speak}}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
