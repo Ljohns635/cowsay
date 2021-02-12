@@ -11,11 +11,17 @@
     <span><a href="/history">History</a></span>
 
     <h1>Welcome to Cow Talks</h1>
-
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Submit" >
     </form>
+    {% if speak %}
+    <div>
+        <pre>
+            {{ speak }}
+        </pre>
+    </div>
+    {% endif %}
 </body>
 </html>
